@@ -23,7 +23,7 @@ export default function SearchResult() {
     const fetchSearch = async () => {
         setError('')
         try {
-            const {data} = await axios.get(import.meta.env.VITE_AUTH_TOKEN+'/search/'+search, {
+            const {data} = await axios.get(import.meta.env.VITE_API_BASE+'/search/'+search, {
                 headers: { Authorization: 'Bearer '+token }
             })
     

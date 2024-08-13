@@ -29,7 +29,7 @@ function App() {
     setError('')
     setLoading(true)
     try {
-        const {data} = await axios.get(import.meta.env.VITE_AUTH_TOKEN+'/get-user', {
+        const {data} = await axios.get(import.meta.env.VITE_API_BASE+'/get-user', {
             headers: { Authorization: 'Bearer '+token }
         })
 
@@ -61,7 +61,7 @@ function App() {
         wssPort: import.meta.env.VITE_REVERB_PORT,
         forceTLS: (import.meta.env.VITE_REVERB_SCHEME ?? 'https') === 'https',
         enabledTransports: ['ws', 'wss'],
-        authEndpoint: 'http://127.0.0.1:8000/broadcasting/auth',
+        authEndpoint: import.meta.env.VITE_REVERB_AUTH,
         bearerToken: token
       })
         

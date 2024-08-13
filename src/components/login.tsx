@@ -18,7 +18,7 @@ export default function Login() {
         setError('')
         setLoading(true)
         try {
-            const {data} = await axios.post(import.meta.env.VITE_AUTH_TOKEN+'/login', {
+            const {data} = await axios.post(import.meta.env.VITE_API_BASE+'/login', {
                 username: username, password: password
             })
 

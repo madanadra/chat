@@ -19,7 +19,7 @@ export default function BottomChat() {
         setError('')
         setLoading(true)
         try {
-            const {data} = await axios.post(import.meta.env.VITE_AUTH_TOKEN+'/create-message/'+recipient?.id, {
+            const {data} = await axios.post(import.meta.env.VITE_API_BASE+'/create-message/'+recipient?.id, {
                 text: text
             },{
                 headers: { Authorization: 'Bearer '+token }

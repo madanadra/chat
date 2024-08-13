@@ -16,7 +16,7 @@ export default function ContentBar() {
     const getChat = async () => {
         setError('')
         try {
-            const {data} = await axios.get(import.meta.env.VITE_AUTH_TOKEN+'/get-chat', {
+            const {data} = await axios.get(import.meta.env.VITE_API_BASE+'/get-chat', {
                 headers: { Authorization: 'Bearer '+token }
             })
 

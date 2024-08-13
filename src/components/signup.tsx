@@ -20,7 +20,7 @@ export default function Signup() {
         setError('')
         setLoading(true)
         try {
-            const {data} = await axios.post(import.meta.env.VITE_AUTH_TOKEN+'/signup', {
+            const {data} = await axios.post(import.meta.env.VITE_API_BASE+'/signup', {
                 username: username, password: password, password_confirmation: passwordConfirmation
             })
     

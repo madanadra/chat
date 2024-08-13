@@ -22,7 +22,7 @@ export default function BottomBar() {
         const newImage = new FormData()
         newImage.append('image', image, image.name)
         try {
-            const {data} = await axios.post(import.meta.env.VITE_AUTH_TOKEN+'/update-image', newImage, {
+            const {data} = await axios.post(import.meta.env.VITE_API_BASE+'/update-image', newImage, {
                 headers: { Authorization: 'Bearer '+token }
             })
 
@@ -49,7 +49,7 @@ export default function BottomBar() {
         setError('')
         setOverlay('logout')
         try {
-            await axios.delete(import.meta.env.VITE_AUTH_TOKEN+'/logout', {
+            await axios.delete(import.meta.env.VITE_API_BASE+'/logout', {
                 headers: { Authorization: 'Bearer '+token }
             })
 

@@ -28,7 +28,7 @@ export default function ContentChat() {
     const getMessage = async () => {
         setError('')
         try {
-            const {data} = await axios.get(import.meta.env.VITE_AUTH_TOKEN+'/get-message/'+recipient?.id, {
+            const {data} = await axios.get(import.meta.env.VITE_API_BASE+'/get-message/'+recipient?.id, {
                 headers: { Authorization: 'Bearer '+token }
             })
 
