@@ -10,7 +10,7 @@ export default function SearchInput() {
                 <PiMagnifyingGlass className="text-2xl text-slate-400" />
             </div>
             <input type="text" placeholder="Search username" value={search} onChange={(e) => setSearch(e.target.value)} 
-            className='w-full bg-transparent p-4 pl-14 outline-none' />
+            className='w-full bg-transparent p-4 pl-14 outline-none' autoFocus />
         </div>
     )
 }
