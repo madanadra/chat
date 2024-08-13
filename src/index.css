@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.break {
+    overflow-wrap: anywhere;
+}
+
+.anim-modal {
+    animation: modal .25s;
+}
+
+.anim-drawer {
+    animation: drawer .25s;
+}
+
+.anim-loading {
+    animation: loading 1s infinite;
+}
+
+.anim-error {
+    animation: error 7s;
+}
+
+.bubble-left::before {
+    content: '';
+    widht: 0;
+    height: 0;
+    position: absolute;
+    border-left: 5px solid transparent;
+    border-right: 5px solid #1e293b;
+    border-top: 5px solid #1e293b;
+    border-bottom: 5px solid transparent;
+    left: -10px;
+    top: 0;
+}
+
+.bubble-right::before {
+    content: '';
+    widht: 0;
+    height: 0;
+    position: absolute;
+    border-left: 5px solid #065f46;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #065f46;
+    border-bottom: 5px solid transparent;
+    right: -10px;
+    top: 0;
+}
+
+@keyframes modal {
+    from {
+        opacity: 0.1;
+        transform: scale(.5);
+    } to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes drawer {
+    from {
+        transform: translateX(-100%);
+    } to {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes loading {
+    from {
+        margin-left: -50%;
+    } to {
+        margin-left: 100%;
+    }
+}
+
+@keyframes error {
+    0% {transform: translateX(100%);}
+    7% {transform: translateX(-10%);}
+    10% {transform: translateX(0%);}
+    90% {transform: translateX(0%);}
+    93% {transform: translateX(-10%);}
+    100% {transform: translateX(100%);}
+}
